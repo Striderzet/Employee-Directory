@@ -14,6 +14,11 @@
 		CB24FAB02C8B3B4C008D5971 /* Employee_DirectoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB24FAAF2C8B3B4C008D5971 /* Employee_DirectoryTests.swift */; };
 		CB24FABA2C8B3B4C008D5971 /* Employee_DirectoryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB24FAB92C8B3B4C008D5971 /* Employee_DirectoryUITests.swift */; };
 		CB24FABC2C8B3B4C008D5971 /* Employee_DirectoryUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB24FABB2C8B3B4C008D5971 /* Employee_DirectoryUITestsLaunchTests.swift */; };
+		CB24FAC92C8B3DEB008D5971 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB24FAC82C8B3DEB008D5971 /* Constants.swift */; };
+		CB24FACB2C8B3EA3008D5971 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB24FACA2C8B3EA3008D5971 /* NetworkManager.swift */; };
+		CB24FACD2C8B3F5C008D5971 /* EmployeeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB24FACC2C8B3F5C008D5971 /* EmployeeModel.swift */; };
+		CB24FACF2C8B476E008D5971 /* EmployeeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB24FACE2C8B476E008D5971 /* EmployeeCard.swift */; };
+		CB24FAD12C8B53CC008D5971 /* EmployeeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB24FAD02C8B53CC008D5971 /* EmployeeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +49,11 @@
 		CB24FAB52C8B3B4C008D5971 /* Employee DirectoryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Employee DirectoryUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB24FAB92C8B3B4C008D5971 /* Employee_DirectoryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee_DirectoryUITests.swift; sourceTree = "<group>"; };
 		CB24FABB2C8B3B4C008D5971 /* Employee_DirectoryUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee_DirectoryUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CB24FAC82C8B3DEB008D5971 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		CB24FACA2C8B3EA3008D5971 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		CB24FACC2C8B3F5C008D5971 /* EmployeeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeModel.swift; sourceTree = "<group>"; };
+		CB24FACE2C8B476E008D5971 /* EmployeeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeCard.swift; sourceTree = "<group>"; };
+		CB24FAD02C8B53CC008D5971 /* EmployeeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +106,11 @@
 			children = (
 				CB24FA9E2C8B3B4A008D5971 /* Employee_DirectoryApp.swift */,
 				CB24FAA02C8B3B4A008D5971 /* ContentView.swift */,
+				CB24FAC82C8B3DEB008D5971 /* Constants.swift */,
+				CB24FACA2C8B3EA3008D5971 /* NetworkManager.swift */,
+				CB24FACC2C8B3F5C008D5971 /* EmployeeModel.swift */,
+				CB24FACE2C8B476E008D5971 /* EmployeeCard.swift */,
+				CB24FAD02C8B53CC008D5971 /* EmployeeViewModel.swift */,
 				CB24FAA22C8B3B4C008D5971 /* Assets.xcassets */,
 				CB24FAA42C8B3B4C008D5971 /* Preview Content */,
 			);
@@ -258,7 +273,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB24FAA12C8B3B4A008D5971 /* ContentView.swift in Sources */,
+				CB24FACF2C8B476E008D5971 /* EmployeeCard.swift in Sources */,
+				CB24FAD12C8B53CC008D5971 /* EmployeeViewModel.swift in Sources */,
 				CB24FA9F2C8B3B4A008D5971 /* Employee_DirectoryApp.swift in Sources */,
+				CB24FACB2C8B3EA3008D5971 /* NetworkManager.swift in Sources */,
+				CB24FACD2C8B3F5C008D5971 /* EmployeeModel.swift in Sources */,
+				CB24FAC92C8B3DEB008D5971 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
