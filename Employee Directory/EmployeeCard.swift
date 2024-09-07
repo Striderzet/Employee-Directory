@@ -21,6 +21,7 @@ struct EmployeeCard: View {
             }, placeholder: {
                 Image(systemName: "person")
                     .resizable()
+                    .background(.blue)
             })
             .frame(width: Constants.EmployeeCardSettings.mainImageSize, height: Constants.EmployeeCardSettings.mainImageSize)
             .clipShape(RoundedRectangle(cornerSize: CGSize(width: 20, height: 10)))
@@ -49,6 +50,7 @@ struct EmployeeCard: View {
                 
         }
         .padding()
+        .background(Color.white)
         
     }
 }

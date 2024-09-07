@@ -19,6 +19,7 @@
 		CB24FACD2C8B3F5C008D5971 /* EmployeeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB24FACC2C8B3F5C008D5971 /* EmployeeModel.swift */; };
 		CB24FACF2C8B476E008D5971 /* EmployeeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB24FACE2C8B476E008D5971 /* EmployeeCard.swift */; };
 		CB24FAD12C8B53CC008D5971 /* EmployeeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB24FAD02C8B53CC008D5971 /* EmployeeViewModel.swift */; };
+		CB24FAD32C8CA36C008D5971 /* ContainerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB24FAD22C8CA36C008D5971 /* ContainerService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		CB24FACC2C8B3F5C008D5971 /* EmployeeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeModel.swift; sourceTree = "<group>"; };
 		CB24FACE2C8B476E008D5971 /* EmployeeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeCard.swift; sourceTree = "<group>"; };
 		CB24FAD02C8B53CC008D5971 /* EmployeeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeViewModel.swift; sourceTree = "<group>"; };
+		CB24FAD22C8CA36C008D5971 /* ContainerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 				CB24FACC2C8B3F5C008D5971 /* EmployeeModel.swift */,
 				CB24FACE2C8B476E008D5971 /* EmployeeCard.swift */,
 				CB24FAD02C8B53CC008D5971 /* EmployeeViewModel.swift */,
+				CB24FAD22C8CA36C008D5971 /* ContainerService.swift */,
 				CB24FAA22C8B3B4C008D5971 /* Assets.xcassets */,
 				CB24FAA42C8B3B4C008D5971 /* Preview Content */,
 			);
@@ -277,6 +280,7 @@
 				CB24FAD12C8B53CC008D5971 /* EmployeeViewModel.swift in Sources */,
 				CB24FA9F2C8B3B4A008D5971 /* Employee_DirectoryApp.swift in Sources */,
 				CB24FACB2C8B3EA3008D5971 /* NetworkManager.swift in Sources */,
+				CB24FAD32C8CA36C008D5971 /* ContainerService.swift in Sources */,
 				CB24FACD2C8B3F5C008D5971 /* EmployeeModel.swift in Sources */,
 				CB24FAC92C8B3DEB008D5971 /* Constants.swift in Sources */,
 			);

@@ -9,32 +9,47 @@ import SwiftUI
 
 struct ContentView: View {
     
-    let networkManager = NetworkManager()
-    @State var employeeList: EmployeeModel?
+    @StateObject var employeeViewModel = EmployeeViewModel()
+    @State var employeeList: EmployeeModel? // Kept local for UI updates on correct thread
+    
+    private let employeeListContainer = ContainerService.resolver.resolveEmployeeList()
     
     var body: some View {
         
         ScrollView {
             
             VStack {
-                if let employees = employeeList?.employees {
+                if let employees = employeeList?.employees,
+                   !employees.isEmpty {
                     ForEach(employees, id:\.self) { employee in
                         EmployeeCard(employee: employee)
                     }
                 } else {
-                    Text("Empty State Here....")
+                    Text("There are no employees available. Pull list down to refresh.")
+                        .padding()
                 }
             }
             .padding()
             .task {
-                do {
-                    employeeList = try await networkManager.fetchData(fromEndpoint: .employeesJson, toType: EmployeeModel.self).0
-                    print("Fetched list: \(String(describing: employeeList))")
-                } catch {
-                    print("There was an error: \(error)")
+                if employeeListContainer.employeeList.value == nil {
+                    await getEmployeeList()
+                } else {
+                   employeeList = employeeListContainer.employeeList.value
                 }
             }
             
+        }
+        .refreshable {
+            await getEmployeeList()
+        }
+    }
+    
+    private func getEmployeeList() async {
+        do {
+            employeeList = try await employeeViewModel.getEmployeeList()
+            employeeListContainer.employeeList.send(employeeList)
+        } catch {
+            print(error)
         }
     }
 }
