@@ -11,14 +11,14 @@ import UIKit
 
 public class QuickCache {
     
-    static var imageCache = NSCache<NSURL, UIImage>()
+    private static var imageCache = NSCache<NSURL, UIImage>()
     
     @MainActor
     static func loadImage(withURL urlString: String) -> any View {
         
-        let url = URL(string: urlString)
+        let url = URL(string: urlString) ?? URL(fileURLWithPath: "")
         
-        if let cachedImage = imageCache.object(forKey: url! as NSURL) {
+        if let cachedImage = imageCache.object(forKey: url as NSURL) {
             
             return Image(uiImage: cachedImage)
                 .resizable()
@@ -30,7 +30,7 @@ public class QuickCache {
                     .resizable()
                     .onAppear(perform: {
                         let newImage = image.getUIImage()!
-                        imageCache.setObject(newImage, forKey: url! as NSURL)
+                        imageCache.setObject(newImage, forKey: url as NSURL)
                     })
             }, placeholder: {
                 Image(systemName: "person")

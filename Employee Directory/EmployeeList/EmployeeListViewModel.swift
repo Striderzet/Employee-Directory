@@ -9,21 +9,37 @@
 import Foundation
 import SwiftUI
 
-class EmployeeListViewModel: ObservableObject {
+protocol EmployeeListViewModelProtocol {
+    func fetchEmployeeList() async throws -> EmployeeListModel?
+    @MainActor
+    func setEmployeeList(employeeList: Binding<EmployeeListModel?>) async
+}
+
+class EmployeeListViewModel: EmployeeListViewModelProtocol, ObservableObject {
     
-    private let networkManager = NetworkManager() // may need to be injected for testing
+    @Published var networkError = ""
     
-    private func fetchEmployeeList() async throws -> EmployeeListModel? {
+    private let networkManager: NetworkManagerProtocol
+    
+    init(networkManger: NetworkManagerProtocol) {
+        self.networkManager = networkManger
+    }
+    
+    internal func fetchEmployeeList() async throws -> EmployeeListModel? {
         return try await networkManager.fetchData(fromEndpoint: .employeesJson, toType: EmployeeListModel.self)
     }
     
     @MainActor
     func setEmployeeList(employeeList: Binding<EmployeeListModel?>) async {
+        
+        /// - Note: if this is not done, the list will not reload and the cached images will not populate. It could be looked into
         employeeList.wrappedValue = nil
+        
         do {
             employeeList.wrappedValue = try await fetchEmployeeList()
         } catch {
             print("There was an error with the request: \(error)")
+            networkError = error.localizedDescription
         }
     }
     

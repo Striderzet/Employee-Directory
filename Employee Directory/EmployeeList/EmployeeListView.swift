@@ -9,7 +9,7 @@ import SwiftUI
 
 struct EmployeeListView: View {
     
-    @StateObject var employeeViewModel = EmployeeListViewModel()
+    @StateObject var employeeViewModel = EmployeeListViewModel(networkManger: NetworkManager())
     @State var employeeList: EmployeeListModel? // Kept local for UI updates on correct thread
     
     var body: some View {

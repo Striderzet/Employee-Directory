@@ -23,6 +23,8 @@ struct Constants {
         static let smallSpacing: CGFloat = 2
         static let mediumSpacing: CGFloat = 8
         static let minimunBioScale: CGFloat = 0.3
+        static let roundRectWidth: CGFloat = 20
+        static let roundRectHeight: CGFloat = 10
     }
     
 }

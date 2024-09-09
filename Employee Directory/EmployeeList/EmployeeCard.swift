@@ -15,9 +15,10 @@ struct EmployeeCard: View {
         
         HStack {
             
+            // Custom Image Cache View
             AnyView(QuickCache.loadImage(withURL: employee.photo_url_small ?? ""))
-            .frame(width: Constants.EmployeeCardSettings.mainImageSize, height: Constants.EmployeeCardSettings.mainImageSize)
-            .clipShape(RoundedRectangle(cornerSize: CGSize(width: 20, height: 10)))
+                .frame(width: Constants.EmployeeCardSettings.mainImageSize, height: Constants.EmployeeCardSettings.mainImageSize)
+                .clipShape(RoundedRectangle(cornerSize: CGSize(width: Constants.EmployeeCardSettings.roundRectWidth, height: Constants.EmployeeCardSettings.roundRectHeight)))
             
             Spacer()
             

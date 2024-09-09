@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 import UIKit
 
-// MARK: SwiftUI IMage Extension
+// MARK: SwiftUI Image Extension
 extension Image {
     @MainActor
     func getUIImage() -> UIImage? {

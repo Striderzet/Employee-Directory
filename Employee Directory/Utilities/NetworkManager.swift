@@ -9,24 +9,39 @@ import Combine
 import Foundation
 import SwiftUI
 
-class NetworkManager {
+protocol NetworkManagerProtocol {
+    func fetchData<T: Decodable>(fromEndpoint urlString: Constants.URL,
+                                 toType type: T.Type) async throws -> T
+}
+
+class NetworkManager: NetworkManagerProtocol {
     
-    /// - Note: Will incorporate tests here.
+    /// With fetch data according to the API call selected (URL string here) and the data type selected
+    /// - Parameters:
+    ///   - urlString: "API call"
+    ///   - type: Data model type
+    /// - Returns: The requested data model parsed from the returned data if successful
     func fetchData<T: Decodable>(fromEndpoint urlString: Constants.URL,
                                  toType type: T.Type) async throws -> T {
         
         let url = URL(string: urlString.rawValue.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "")
         let request = URLRequest(url: url!)
         let (data, response) = try await URLSession.shared.data(for: request)
-        let fetchedData = try JSONDecoder().decode(T.self, from: try mapResponse(response: (data, response)))
+        let fetchedData = try JSONDecoder().decode(T.self, from: try NetworkManagerMethods.mapResponse(response: (data, response)))
         return fetchedData
         
     }
     
+}
+
+/// - Note: This was moved here to test error handling better
+struct NetworkManagerMethods {
+    
     /// This method will parse and handle possible network errors from our async await network calls
     /// - Parameter response: The response that will need to be parsed to determine what error was sent back from the request
     /// - Returns: The requested data
-    private func mapResponse(response: (data: Data, response: URLResponse)) throws -> Data {
+    static func mapResponse(response: (data: Data, response: URLResponse)) throws -> Data {
+        
         guard let httpResponse = response.response as? HTTPURLResponse else {
             return response.data
         }
@@ -51,6 +66,7 @@ class NetworkManager {
         default:
             throw NetworkError.http(httpResponse: httpResponse, data: response.data)
         }
+        
     }
     
 }
