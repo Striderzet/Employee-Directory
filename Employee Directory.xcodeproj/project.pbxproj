@@ -16,10 +16,12 @@
 		CB24FABC2C8B3B4C008D5971 /* Employee_DirectoryUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB24FABB2C8B3B4C008D5971 /* Employee_DirectoryUITestsLaunchTests.swift */; };
 		CB24FAC92C8B3DEB008D5971 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB24FAC82C8B3DEB008D5971 /* Constants.swift */; };
 		CB24FACB2C8B3EA3008D5971 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB24FACA2C8B3EA3008D5971 /* NetworkManager.swift */; };
-		CB24FACD2C8B3F5C008D5971 /* EmployeeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB24FACC2C8B3F5C008D5971 /* EmployeeModel.swift */; };
+		CB24FACD2C8B3F5C008D5971 /* EmployeeListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB24FACC2C8B3F5C008D5971 /* EmployeeListModel.swift */; };
 		CB24FACF2C8B476E008D5971 /* EmployeeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB24FACE2C8B476E008D5971 /* EmployeeCard.swift */; };
-		CB24FAD12C8B53CC008D5971 /* EmployeeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB24FAD02C8B53CC008D5971 /* EmployeeViewModel.swift */; };
-		CB24FAD32C8CA36C008D5971 /* ContainerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB24FAD22C8CA36C008D5971 /* ContainerService.swift */; };
+		CB24FAD12C8B53CC008D5971 /* EmployeeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB24FAD02C8B53CC008D5971 /* EmployeeListViewModel.swift */; };
+		CB24FAD82C8F278C008D5971 /* EmployeeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB24FAD72C8F278C008D5971 /* EmployeeListView.swift */; };
+		CB24FADA2C8F2988008D5971 /* QuickCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB24FAD92C8F2988008D5971 /* QuickCache.swift */; };
+		CB24FADC2C8F2F27008D5971 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB24FADB2C8F2F27008D5971 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,10 +54,13 @@
 		CB24FABB2C8B3B4C008D5971 /* Employee_DirectoryUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee_DirectoryUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		CB24FAC82C8B3DEB008D5971 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CB24FACA2C8B3EA3008D5971 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		CB24FACC2C8B3F5C008D5971 /* EmployeeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeModel.swift; sourceTree = "<group>"; };
+		CB24FACC2C8B3F5C008D5971 /* EmployeeListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListModel.swift; sourceTree = "<group>"; };
 		CB24FACE2C8B476E008D5971 /* EmployeeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeCard.swift; sourceTree = "<group>"; };
-		CB24FAD02C8B53CC008D5971 /* EmployeeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeViewModel.swift; sourceTree = "<group>"; };
-		CB24FAD22C8CA36C008D5971 /* ContainerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerService.swift; sourceTree = "<group>"; };
+		CB24FAD02C8B53CC008D5971 /* EmployeeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListViewModel.swift; sourceTree = "<group>"; };
+		CB24FAD42C8F26E5008D5971 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		CB24FAD72C8F278C008D5971 /* EmployeeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListView.swift; sourceTree = "<group>"; };
+		CB24FAD92C8F2988008D5971 /* QuickCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickCache.swift; sourceTree = "<group>"; };
+		CB24FADB2C8F2F27008D5971 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +91,7 @@
 		CB24FA922C8B3B4A008D5971 = {
 			isa = PBXGroup;
 			children = (
+				CB24FAD42C8F26E5008D5971 /* README.md */,
 				CB24FA9D2C8B3B4A008D5971 /* Employee Directory */,
 				CB24FAAE2C8B3B4C008D5971 /* Employee DirectoryTests */,
 				CB24FAB82C8B3B4C008D5971 /* Employee DirectoryUITests */,
@@ -108,12 +114,8 @@
 			children = (
 				CB24FA9E2C8B3B4A008D5971 /* Employee_DirectoryApp.swift */,
 				CB24FAA02C8B3B4A008D5971 /* ContentView.swift */,
-				CB24FAC82C8B3DEB008D5971 /* Constants.swift */,
-				CB24FACA2C8B3EA3008D5971 /* NetworkManager.swift */,
-				CB24FACC2C8B3F5C008D5971 /* EmployeeModel.swift */,
-				CB24FACE2C8B476E008D5971 /* EmployeeCard.swift */,
-				CB24FAD02C8B53CC008D5971 /* EmployeeViewModel.swift */,
-				CB24FAD22C8CA36C008D5971 /* ContainerService.swift */,
+				CB24FAD62C8F2760008D5971 /* EmployeeList */,
+				CB24FAD52C8F2733008D5971 /* Utilities */,
 				CB24FAA22C8B3B4C008D5971 /* Assets.xcassets */,
 				CB24FAA42C8B3B4C008D5971 /* Preview Content */,
 			);
@@ -143,6 +145,28 @@
 				CB24FABB2C8B3B4C008D5971 /* Employee_DirectoryUITestsLaunchTests.swift */,
 			);
 			path = "Employee DirectoryUITests";
+			sourceTree = "<group>";
+		};
+		CB24FAD52C8F2733008D5971 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				CB24FAC82C8B3DEB008D5971 /* Constants.swift */,
+				CB24FACA2C8B3EA3008D5971 /* NetworkManager.swift */,
+				CB24FAD92C8F2988008D5971 /* QuickCache.swift */,
+				CB24FADB2C8F2F27008D5971 /* Extensions.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		CB24FAD62C8F2760008D5971 /* EmployeeList */ = {
+			isa = PBXGroup;
+			children = (
+				CB24FACC2C8B3F5C008D5971 /* EmployeeListModel.swift */,
+				CB24FAD02C8B53CC008D5971 /* EmployeeListViewModel.swift */,
+				CB24FAD72C8F278C008D5971 /* EmployeeListView.swift */,
+				CB24FACE2C8B476E008D5971 /* EmployeeCard.swift */,
+			);
+			path = EmployeeList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,12 +300,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB24FAA12C8B3B4A008D5971 /* ContentView.swift in Sources */,
+				CB24FAD82C8F278C008D5971 /* EmployeeListView.swift in Sources */,
 				CB24FACF2C8B476E008D5971 /* EmployeeCard.swift in Sources */,
-				CB24FAD12C8B53CC008D5971 /* EmployeeViewModel.swift in Sources */,
+				CB24FAD12C8B53CC008D5971 /* EmployeeListViewModel.swift in Sources */,
 				CB24FA9F2C8B3B4A008D5971 /* Employee_DirectoryApp.swift in Sources */,
+				CB24FADC2C8F2F27008D5971 /* Extensions.swift in Sources */,
 				CB24FACB2C8B3EA3008D5971 /* NetworkManager.swift in Sources */,
-				CB24FAD32C8CA36C008D5971 /* ContainerService.swift in Sources */,
-				CB24FACD2C8B3F5C008D5971 /* EmployeeModel.swift in Sources */,
+				CB24FADA2C8F2988008D5971 /* QuickCache.swift in Sources */,
+				CB24FACD2C8B3F5C008D5971 /* EmployeeListModel.swift in Sources */,
 				CB24FAC92C8B3DEB008D5971 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

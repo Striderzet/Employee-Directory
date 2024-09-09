@@ -15,14 +15,7 @@ struct EmployeeCard: View {
         
         HStack {
             
-            AsyncImage(url: URL(string: employee.photo_url_small ?? ""), content: { image in
-                image
-                    .resizable()
-            }, placeholder: {
-                Image(systemName: "person")
-                    .resizable()
-                    .background(.blue)
-            })
+            AnyView(QuickCache.loadImage(withURL: employee.photo_url_small ?? ""))
             .frame(width: Constants.EmployeeCardSettings.mainImageSize, height: Constants.EmployeeCardSettings.mainImageSize)
             .clipShape(RoundedRectangle(cornerSize: CGSize(width: 20, height: 10)))
             

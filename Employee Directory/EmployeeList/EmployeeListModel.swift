@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct EmployeeModel: Codable, Hashable {
+struct EmployeeListModel: Codable, Hashable {
     let employees: [Employee]
 }
 
