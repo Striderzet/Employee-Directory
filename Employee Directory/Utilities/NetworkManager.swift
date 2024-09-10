@@ -34,7 +34,6 @@ class NetworkManager: NetworkManagerProtocol {
     
 }
 
-/// - Note: This was moved here to test error handling better
 struct NetworkManagerMethods {
     
     /// This method will parse and handle possible network errors from our async await network calls
