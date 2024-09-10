@@ -33,6 +33,8 @@ class EmployeeListViewModel: EmployeeListViewModelProtocol, ObservableObject {
     func setEmployeeList(employeeList: Binding<EmployeeListModel?>) async {
         
         /// - Note: if this is not done, the list will not reload and the cached images will not populate. It could be looked into
+        ///     - Also, this has much better UX if i use an escaping closure to update the value in the view, but i would have to change too much code here and add time.
+        ///     - This can be done later.
         employeeList.wrappedValue = nil
         
         do {
