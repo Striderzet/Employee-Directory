@@ -12,11 +12,12 @@ import XCTest
 final class Employee_DirectoryTests: XCTestCase {
 
     // MARK: - Employee List View Model Tests
+    /// - Note: Even with all of the race condition warnings here the tests still work. They all come from the binding variable method instances
     
     func testEmployeeListViewModelFetchPopulation() async throws {
         
         var bindingValue: EmployeeListModel?
-        var employeeList = Binding(get: { bindingValue }, set: { bindingValue = $0 })
+        let employeeList = Binding(get: { bindingValue }, set: { bindingValue = $0 })
         guard let requestResponse = HTTPURLResponse(url: URL(string: "test")!, statusCode: 200, httpVersion: "", headerFields: [:]) else { return  }
         let networkManager = makeNetworkManagerSUT(response: requestResponse, employeeListModel: EmployeeListModel(employees: [employee1, employee2]))
         let viewModel = EmployeeListViewModel(networkManger: networkManager)
@@ -37,7 +38,7 @@ final class Employee_DirectoryTests: XCTestCase {
         
     }
     
-    func testtestEmployeeListViewModelFetchErrors() async throws {
+    func testEmployeeListViewModelFetchErrors() async throws {
         
         var bindingValue: EmployeeListModel?
         let employeeList = Binding(get: { bindingValue }, set: { bindingValue = $0 })
