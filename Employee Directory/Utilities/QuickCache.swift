@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 import UIKit
 
-public class QuickCache {
+struct QuickCache {
     
     private static var imageCache = NSCache<NSURL, UIImage>()
     
